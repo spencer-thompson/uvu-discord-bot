@@ -19,6 +19,7 @@ class MyClient(discord.Client):
     async def on_ready(self):
         print('Client now Online')
 
+    # wow async cool
     async def on_raw_reaction_add(self, payload):
         """
         Give a role based on reaction emoji
