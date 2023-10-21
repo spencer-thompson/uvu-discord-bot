@@ -62,8 +62,10 @@ class MyClient(discord.Client):
             role = discord.utils.get(guild.roles, name='monkey')
             await member.remove_roles(role)
 
-intents = discord.Intents.default()
-intents.members = True
+# Only runs if this is the entrypoint
+if __name__ == "__main__":
+    intents = discord.Intents.default()
+    intents.members = True
 
-client = MyClient(intents=intents)
-client.run(os.getenv('bot_token'))
+    client = MyClient(intents=intents)
+    client.run(os.getenv('bot_token'))
