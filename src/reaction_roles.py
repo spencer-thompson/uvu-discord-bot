@@ -14,7 +14,7 @@ class MyClient(discord.Client):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.target_message_id = 1156079576401850450
+        self.target_message_id = 1165417626806267986 # In bot-testing channel
 
     async def on_ready(self):
         print('Client now Online')
@@ -30,8 +30,8 @@ class MyClient(discord.Client):
 
         guild = client.get_guild(payload.guild_id)
 
-        if payload.emoji.name == '🥔':
-            role = discord.utils.get(guild.roles, name='Potato')
+        if payload.emoji.name == '🎮':
+            role = discord.utils.get(guild.roles, name='Gamer')
             await payload.member.add_roles(role)
         elif payload.emoji.name == '💩':
             role = discord.utils.get(guild.roles, name='Chocolate ;)')
@@ -52,8 +52,8 @@ class MyClient(discord.Client):
         guild = client.get_guild(payload.guild_id)
         member = guild.get_member(payload.user_id)
 
-        if payload.emoji.name == '🥔':
-            role = discord.utils.get(guild.roles, name='Potato')
+        if payload.emoji.name == '🎮':
+            role = discord.utils.get(guild.roles, name='Gamer')
             await member.remove_roles(role)
         elif payload.emoji.name == '💩':
             role = discord.utils.get(guild.roles, name='Chocolate ;)')
